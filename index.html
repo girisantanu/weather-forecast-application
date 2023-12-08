@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Today</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg bg-sky-blue ">
+    
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Weather Today
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Readme
+
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">City
+
+            </a>
+
+            <ul 
+            class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Ahmedabad</a></li>
+              <li><a class="dropdown-item" href="#">Bangalore</a></li>
+              <li><a class="dropdown-item" href="#">Chennai</a></li>
+              <li><a class="dropdown-item" href="#">Chandigarh</a></li>
+              <li><a class="dropdown-item" href="#">Delhi</a></li>
+              <li><a class="dropdown-item" href="#">Indore</a></li>
+              <li><a class="dropdown-item" href="#">Jaipur</a></li>
+              <li><a class="dropdown-item" href="#">Kolkata</a></li>
+              <li><a class="dropdown-item" href="#">Lucknow</a></li>
+              <li><a class="dropdown-item" href="#">Mumbai</a></li>
+              <li><a class="dropdown-item" href="#">Nagpur</a></li>
+              <li><a class="dropdown-item" href="#">Pune</a></li>
+              <li><a class="dropdown-item" href="#">Rajkot</a></li>
+              <li><a class="dropdown-item" href="#">Visakhapatnam</a></li>
+            </ul>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle active " href="#" role="button" data-bs-toggle="dropdown"aria-expanded= "false">Booklet </a>
+          </li>
+
+
+        </ul>
+        <form class="d-flex" role="Search">
+          <input id="city" class="form-control me-2" type="Search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container"> 
+  <h2 class="my-4 text-center  ">Weather for <span id="cityName"></span> </h2>
+
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Temperature</h4>
+            </div>
+
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light"><span>&#8451;</span></small></h1>
+
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Temperature: <span id="temp"></span></li>
+                <li>Min: <span id="min_temp"></span></li>
+                <li>Max: <span id="max_temp"></span></li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Humidity</h4>
+            </div>
+
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light"> %</small></h1>
+
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Cloud PCT: <span id="cloud_pct"></span></li>
+                <li>Feels Like: <span id="feels_like"></span></li>
+                <li>humidity: <span id="humidity"></span></li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Wind</h4>
+            </div>
+
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-body-secondary fw-light"> km/h</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                
+                <li>Sunrise: <span id="sunrise"></span></li>
+                <li>Sunset: <span id="sunset"></span></li>
+                <li>Wind Speed: <span id="wind_speed"></span></li>
+                
+
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </tbody>
+  </table>
+  <div class="container"> 
+    <h2 class="my-4 text-center  ">Weather History<span id="cityName"></span> </h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Temperature</th>
+          <th>Humidity</th>
+          <th>Wind</th>
+          <th>AQI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ahmedabad</td>
+          <td>31ºC</td>
+          <td>81%</td>
+          <td>4.07 km/h</td>
+          <td>AQI 79</td>
+        </tr>
+        <tr>
+          <td>Bangalore</td>
+          <td>27ºC</td>
+          <td>93%</td>
+          <td>5.97 km/h</td>
+          <td>AQI 118</td>
+        </tr>
+        <tr>
+          <td>Chennai</td>
+          <td>26ºC</td>
+          <td>84%</td>
+          <td>6.97 km/h</td>
+          <td>AQI 66</td>
+        </tr>
+        <tr>
+          <td>Chandigarh</td>
+          <td>27ºC</td>
+          <td>90%</td>
+          <td>2.90 km/h</td>
+          <td>AQI 223</td>
+        </tr>
+          <tr>
+            <td>Delhi</td>
+            <td>33ºC</td>
+            <td>72%</td>
+            <td>2.65 km/h</td>
+            <td>AQI 339</td>
+        </tr>
+        <tr>
+          <td>Indore</td>
+          <td>37ºC</td>
+          <td>93%</td>
+          <td>4.77 km/h</td>
+          <td>AQI 97</td>
+        </tr>
+        <tr>
+          <td>Jaipur</td>
+          <td>28ºC</td>
+          <td>83%</td>
+          <td>3.93 km/h</td>
+          <td>AQI 96</td>
+        </tr>
+        <tr>
+          <td>Kolkata</td>
+          <td>30ºC</td>
+          <td>70%</td>
+          <td>3.11 km/h</td>
+          <td>AQI 99</td>
+        </tr>
+        <tr>
+          <td>Lucknow</td>
+          <td>26ºC</td>
+          <td>56%</td>
+          <td>3.33 km/h</td>
+          <td>AQI 144</td>
+        </tr>
+        <tr>
+          <td>Mumbai</td>
+          <td>36ºC</td>
+          <td>98%</td>
+          <td>5.55 km/h</td>
+          <td>AQI 199</td>
+        </tr>
+        <tr>
+          <td>Nagpur</td>
+          <td>35ºC</td>
+          <td>96%</td>
+          <td>3.99 km/h</td>
+          <td>AQI 134</td>
+        </tr>
+        <tr>
+          <td>Pune</td>
+          <td>32ºC</td>
+          <td>89%</td>
+          <td>4.01 km/h</td>
+          <td>AQI 76</td>
+        </tr>
+        <tr>
+          <td>Rajkot</td>
+          <td>39ºC</td>
+          <td>76%</td>
+          <td>4.45 km/h</td>
+          <td>AQI 56</td>
+        </tr>
+        <tr>
+          <td>Visakhapatnam</td>
+          <td>33ºC</td>
+          <td>98%</td>
+          <td>5.67 km/h</td>
+          <td>AQI 39</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+  
+</body>
+
+</html>
